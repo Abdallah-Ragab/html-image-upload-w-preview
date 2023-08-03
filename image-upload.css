@@ -1,0 +1,80 @@
+.upload-box {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='10' ry='10' stroke='%23999999FF' stroke-width='4' stroke-dasharray='6%2c 14' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+        border-radius: 10px;
+}
+.occupied {
+    border: 1px solid #ccc;
+    background-image: none;
+}
+/* when .occupied is hoveredd over show its sibling .overlay */
+.occupied:hover #overlay {
+    display: flex;
+}
+
+/* .upload-box:hover .placeholder {
+    display: flex;
+    cursor: pointer;
+} */
+
+.central {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.col {
+    flex-direction: column;
+}
+.layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+.upload-box>* {
+    border-radius: inherit;
+    width: 100%;
+    height: 100%;
+}
+.upload-box #overlay .icon {
+    color: #fff;
+    font-size: 25px;
+}
+.upload-box #placeholder {
+    cursor: pointer;
+}
+.upload-box #placeholder .icon {
+    font-size: 50px;
+    color: #777;
+}
+.upload-box:hover #placeholder .icon {
+    color: #555;
+}
+.upload-box #placeholder p {
+    margin: 0;
+    font-family: sans-serif;
+}
+.upload-box #placeholder .primary {
+    margin-bottom: 5px;
+    font-size: 22px;
+    color: #555;
+}
+.upload-box #placeholder .secondary {
+    font-size: 12px;
+    color: #999;
+}
+.upload-box #preview {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hidden {
+    display: none;
+}
